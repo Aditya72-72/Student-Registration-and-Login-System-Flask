@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="main">
+        <h2>All Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Contact Number</th>
+                    <th>Address</th>
+                    <th>Course</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student[3] }}</td>
+                    <td>{{ student[1] }} {{ student[2] }}</td>
+                    <td>{{ student[6] }}</td>
+                    <td>{{ student[4] }}</td>
+                    <td>{{ student[7] }}</td>
+                    <td>{{ student[8] }}</td>
+                    <td>{{ student[11] }}</td>
+                    <td>{{ student[12] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    </div>
+</body>
+</html>
